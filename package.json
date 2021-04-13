@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Joseph2700/VirtualMarket/issues"
   },
-  "homepage": "https://github.com/Joseph2700/VirtualMarket#readme"
+  "homepage": "https://github.com/Joseph2700/VirtualMarket#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
