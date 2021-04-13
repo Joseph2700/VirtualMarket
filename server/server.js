@@ -5,6 +5,6 @@ app.listen(8080, function() {
     console.log('Listening on 8080'); 
 })
 
-app.get('/', function(req, res) {
+app.get('/api', function(req, res) {
     res.send('Bravo Six, going dark');
 })
