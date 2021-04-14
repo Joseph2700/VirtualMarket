@@ -25,7 +25,7 @@ app.listen(8080, function() {
     console.log('Listening on 8080'); 
 })
 
-app.get('/api', function(req, res) {
+app.get('/home', function(req, res) {
     res.send('Bravo Six, going dark');
 })
 
