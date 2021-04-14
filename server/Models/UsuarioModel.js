@@ -9,7 +9,7 @@ var usuario = function(
 }
 
 usuario.Crear = (newUser, result) => {
-    connection.query(`call AgregarUsuario( "?", "?");`
+    connection.query(`call InsertarUsuario( "?", "?");`
       [newUser, result]  
     , true, (err, res) => {
       if (err) {
