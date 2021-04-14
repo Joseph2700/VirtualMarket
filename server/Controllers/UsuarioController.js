@@ -9,7 +9,7 @@ exports.Crear = (req, res) => {
     }
     const nuevoUsuario = new Usuario(
       req.body.NombreUsuario,
-      req.body.Contraseña,
+      req.body.Contrasena,
     );
     Usuario.Crear(nuevoUsuario, (err, data) => {
       if (err){
