@@ -25,9 +25,7 @@
           </ul>
           <form class="d-flex">
             <router-link class="nav-link" to="/login">Login</router-link>
-            <button class="btn btn-outline-primary" type="submit">
-              Register
-            </button>
+            <router-link class="btn btn-outline-primary my-2 my-sm-0" to="/register">Register</router-link>
           </form>
         </div>
       </div>
