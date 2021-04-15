@@ -1,4 +1,5 @@
 const connection = require("../server.js")
+const db = require("../server.js")
 
 var usuario = function(
     uNombreUsuario,
@@ -21,18 +22,13 @@ usuario.Crear = (newUser, result) => {
     });
   };
   
-  usuario.getAllUsuario = (result) => {
-    const sql = `SELECT * FROM usuario;`;
-    db.query(sql, (err, res) => {
-      if (err) {
-        console.log("Hay un error.", err);
-        result(null, err);
-        return;
-      } else {
-        console.log("Usuarios encontrados: ");
-        result(null, res);
-      }
-    });
-  };
+  // usuario.getAllUsuario = (result) => {
+  //   db.query("SELECT * FROM virtualmarket.tbl_usuario;", function (err, result, fields) {
+  //     if (err) throw err;
+  //     console.log(result);
+  //   });
+  // };
+  
+
   
   module.exports = usuario;
