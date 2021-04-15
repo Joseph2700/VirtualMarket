@@ -5,13 +5,13 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        <form>
+        <form>        
           <div class="mb-3">
             <label for="Inputusername" class="form-label">Username</label>
             <input
               type="username"
               class="form-control"
-              id="exampleInputEmail1"
+              id="Inputusername"
               placeholder="Enter username"
             />
           </div>
