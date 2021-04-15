@@ -3,7 +3,7 @@ const app = express();
 const morgan = require('morgan')
 const bodyparser = require('body-parser');
 app.use(bodyparser.json());
-require("dotenv").config();
+require("dotenv").config({ path: "C:/users/axell/Documents/GitRep/VirtualMarket/.env"});
 const cors = require('cors')
 const router = express.Router()
 
