@@ -11,7 +11,8 @@
             <input
               type="name"
               class="form-control"
-              id="Inputname"
+              id="name"
+              v-model="name"
               placeholder="Enter name"
             />
           </div>
@@ -20,7 +21,8 @@
             <input
               type="lastname"
               class="form-control"
-              id="InputLastName"
+              id="lastname"
+              v-model="lastname"
               placeholder="Enter last name"
             />
           </div>
@@ -29,7 +31,8 @@
             <input
               type="username"
               class="form-control"
-              id="InputUsername"
+              id="username"
+              v-model="username"
               placeholder="Enter username"
             />
           </div>
@@ -38,7 +41,8 @@
             <input
               type="password"
               class="form-control"
-              id="InputPassword"
+              id="password"
+              v-model="password"
               placeholder="Enter password"
             />
           </div>
@@ -52,7 +56,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "register",
+  data() {
+    return {
+      name: "",
+      lastname: "",
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    register: function () {
+      console.log("name: " + this.name);
+      console.log("lastname: " + this.lastname);
+      console.log("username: " + this.username);
+      console.log("password: " + this.password);
+    },
+  },
+};
 </script>
 
 <style scoped>
