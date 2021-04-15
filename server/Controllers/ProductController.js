@@ -5,7 +5,7 @@ exports.getItems = (req, res) => {
         if (err) {
             res.send(err);
         }
-        console.log('Articulos', items);
+        console.log('Articulos: ', items);
         res.send(items)
     });
 }
