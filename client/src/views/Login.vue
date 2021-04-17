@@ -4,28 +4,28 @@
     <br />
     <div class="row">
       <div class="col-md-3"></div>
-      <div class="col-md-6">      
-          <div class="mb-3">
-            <label for="Inputusername" class="form-label">Username</label>
-            <input
-              type="username"
-              class="form-control"
-              id="username"
-              v-model="username"
-              placeholder="Enter username"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="InputPassword" class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              v-model="password"
-              placeholder="Enter password"
-            />
-          </div>
-          <button @click="login" class="btn btn-primary">Login</button>    
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="Inputusername" class="form-label">Username</label>
+          <input
+            type="username"
+            class="form-control"
+            id="username"
+            v-model="username"
+            placeholder="Enter username"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="InputPassword" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            v-model="password"
+            placeholder="Enter password"
+          />
+        </div>
+        <router-link class="btn btn-outline-primary" to="/market">Login</router-link>
       </div>
       <div class="col-md-3"></div>
     </div>
