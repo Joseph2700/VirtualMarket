@@ -1,3 +1,5 @@
+
+
 use VirtualMarket
 
 DROP TABLE tbl_usuario
@@ -51,3 +53,136 @@ CREATE TABLE tbl_checkout (
     PRIMARY KEY(IdCheckout),
     FOREIGN KEY(IdCarrito) REFERENCES tbl_carrito(IdCarrito)
 )
+
+
+-- stored procedure
+
+DELIMITER $$
+CREATE PROCEDURE  InsertarCarrito
+(
+	in IdCarrito  INT,
+    in IdProducto INT,
+    in IdUsuario  INT
+)
+BEGIN
+insert into tbl_carrito(IdCarrito,IdProducto,IdUsuario) values(IdCarrito,IdProducto,IdUsuario);
+END;
+drop PROCEDURE  InsertarCarrito
+
+DELIMITER $$
+
+CREATE PROCEDURE  InsertarCheckout
+(
+    in IdCheckout INT,
+	in IdCarrito  INT,
+    in SubTotal decimal (10,2),
+    in ITBIS DECIMAL(10,2),
+    in Total DECIMAL(10,2),
+    in TipoTarjeta BIT 
+)
+BEGIN
+insert into tbl_checkout(IdCheckout,IdCarrito,SubTotal,ITBIS,Total,TipoTarjeta) values(IdCheckout,IdCarrito,SubTotal,ITBIS,Total,TipoTarjeta);
+END;
+
+
+DELIMITER $$
+CREATE PROCEDURE  InsertarProducto_Carrito
+(
+    in IdProductoCarrito INT,
+	in IdCarrito  INT,
+    in IdProducto INT
+)
+BEGIN
+insert into tbl_producto_carrito(IdProductoCarrito,IdCarrito,IdProducto) values(IdProductoCarrito,IdCarrito,IdProducto);
+END;
+
+
+DELIMITER $$
+CREATE PROCEDURE  InsertarUsuario
+(
+	in IdUsuario INT,
+    in NombreUsuario VARCHAR(50),
+    in Contrasena VARCHAR(50) 
+)
+BEGIN
+insert into tbl_usuario(IdUsuario,NombreUsuario,Contrasena) values(IdUsuario,NombreUsuario,Contrasena);
+END;
+
+DELIMITER $$
+CREATE PROCEDURE  InsertarProducto
+(
+	in IdProducto INT,
+    in Categoria VARCHAR(20),
+    in Nombre VARCHAR(35),
+    in Cantidad INT ,
+    in Precio DECIMAL(10,2),
+    in FechaRegistro DATETIME
+)
+BEGIN
+insert into tbl_producto(IdProducto,Categoria,Nombre,Cantidad,Precio,FechaRegistro) values(IdProducto,Categoria,Nombre,Cantidad,Precio,FechaRegistro);
+END;
+
+
+DELIMITER $$
+CREATE PROCEDURE EliminarCheckout
+(
+in IdCheckout int
+)
+
+BEGIN
+delete from tbl_checkout where IdCheckout='IdCheckout';
+END;
+
+DELIMITER $$
+CREATE PROCEDURE EliminarProductoCarrito
+(
+in IdProductoCarrito int
+)
+
+BEGIN
+delete from tbl_producto_carrito where IdProductoCarrito='IdProductoCarrito';
+END;
+
+
+DELIMITER $$
+CREATE PROCEDURE EliminarCarrito
+(
+in IdCarrito int
+)
+
+BEGIN
+delete from tbl_carrito where Idcarrito='Idcarrito';
+END;
+
+
+DELIMITER $$
+CREATE PROCEDURE EliminarProducto
+(
+in IdProducto int
+)
+
+BEGIN
+delete from tbl_producto where IdProducto='IdProducto';
+END;
+
+
+DELIMITER $$
+CREATE PROCEDURE EliminarUsuario
+(
+in IdUsuario int
+)
+
+BEGIN
+delete from tbl_usuario where IdUsuario='IdUsuario';
+END;
+
+
+DELIMITER $$
+CREATE PROCEDURE obtenerProductos(IN IdProducto INT)
+BEGIN
+    SELECT * 
+    FROM productos
+    WHERE IdProducto = IdProducto;
+END;
+
+
