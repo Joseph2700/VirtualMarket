@@ -47,7 +47,7 @@
             />
           </div>
           <br />
-          <button type="submit" class="btn btn-primary">Register</button>
+          <router-link class="btn btn-outline-primary" to="/login">Register</router-link>
         </form>
       </div>
       <div class="col-md-3"></div>
