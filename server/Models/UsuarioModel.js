@@ -17,7 +17,7 @@ Usuario.Crear = (newUser, result) => {
 };
   
     Usuario.getAllUsuario = (result) => {
-        getConnection().query("SELECT * FROM virtualmarket.tbl_usuario;", function (err, res, fields) {
+        getConnection().query("EXEC dbo.ObtenerUsuario", function (err, res, fields) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
