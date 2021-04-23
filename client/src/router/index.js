@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import Market from "../views/Market.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,13 @@ const routes = [
     name: "register",
     component: Register,
   },
+
+  {
+    path: "/market",
+    name: "market",
+    component: Market,
+  },
+  
   {
     path: "/about",
     name: "About",
