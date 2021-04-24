@@ -8,6 +8,7 @@ const config = {
 	database: process.env.RDS_DATABASE,
 };
 
+
 sql.connect(config, function (err){
     if (err) {
         console.error("Database connection failed: " + err.stack);
